@@ -1,4 +1,5 @@
 import type {Movie} from '../types/movies';
+import '../css/MovieCard.css';
 
 type MovieCardProps = {
    movie: Movie;
