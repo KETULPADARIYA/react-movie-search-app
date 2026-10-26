@@ -1,6 +1,6 @@
 // import { useState } from 'react'
 import './App.css'
-import MovieCard from "./components/MovieCard.tsx"
+import Home from './pages/Home'
 
 type TextProps = {
   text: string;
@@ -14,21 +14,14 @@ function Text({ text }: TextProps) {
   )
 }
 
-const movie = {
-  id: 1,
-  title: 'The Dark Knight',
-  url:'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQkUywIUXDjHSQJIaNHYVs08osgBpF5Ot-xmB_omyEZeeRP9Xug',
-  release_date: '2008-07-18',
-}
 
 function App() {
 
-  const MovieNumber:number =0;
+  // const MovieNumber:number =0;
 
   return (
     <>
-    {MovieNumber === 0 ? <MovieCard movie={movie} /> : <h1>No movies found</h1>}
-    { MovieNumber > 0 && <MovieCard movie={movie} /> }
+    <Home />
     <Text text="Hello "/>
     <Text text="Whats app"/>
     </>
