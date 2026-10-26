@@ -19,9 +19,9 @@ function Home() {
     },
     {
         id: 3,
-        title: 'The Dark Knight',
-        url: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
-        release_date: '2008-07-18',
+        title: 'Batman Begins',
+        url: 'https://image.tmdb.org/t/p/w500/8RW2runSEc34IwKN2D1aPcJd2UL.jpg',
+        release_date: '2005-06-15',
     },
     // add matrix movie
     {
