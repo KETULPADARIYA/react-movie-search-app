@@ -1,7 +1,10 @@
 import  type { Movie } from '../types/movies';
 import MovieCard from '../components/MovieCard';
+import { useState } from 'react';
 
 function Home() {
+
+    const [searchQuery, setSearchQuery] = useState('');
 
 
  const movies: Movie[] = [
@@ -44,12 +47,34 @@ function Home() {
     },
  ]
 
+  // movies data will updated whenever the search query changes
+  // to persist movies data in the browser, we can use the localStorage API OR use a server-side database like Supabase
+  // OR CAN WE USE state
+ // if the search query is empty, show all movies
+ // if the search query is not empty, show only the movies that match the search query
+
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) =>{
+    e.preventDefault();
+    alert(searchQuery);
+    setSearchQuery('');
+  };
   
   return (
     <div className="home">
+        <form onSubmit={handleSearch} className="search-form">
+            <input 
+                 type="text" 
+                 placeholder="Search for movies ..."
+                  className="search-input"
+                  value= {searchQuery}
+                  onChange= {(e)=> setSearchQuery(e.target.value)}
+                  />
+            <button type="submit" className="search-button">Search</button>
+        </form>
         <div className='movies-grid'>
             {movies.map((movie)=> (
-                <MovieCard key={movie.id} movie={movie} />
+                movie.title.toLowerCase().includes(searchQuery.toLowerCase()) &&<MovieCard key={movie.id} movie={movie} />
             ))}
         </div>
     </div>
