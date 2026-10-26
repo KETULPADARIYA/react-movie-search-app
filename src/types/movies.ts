@@ -1,8 +1,20 @@
-type Movie = {
-    id: number;
-    title: string;
-    url: string;
-    release_date: string;
-}
+import {z} from 'zod';
 
-export type { Movie };
+export const movieSchema = z.object({
+    id: z.number().min(0).max(1000000000),
+    title: z.string(),
+    url: z.string().nullable,
+    release_date: z.string(),
+    poster_path: z.string(),
+});
+
+
+// type Movie = {
+//     id: number;
+//     title: string;
+//     url: string;
+//     release_date: string;
+//     poster_path: string;
+// }
+
+export type Movie= z.infer<typeof movieSchema>;
