@@ -49,3 +49,9 @@
   .movies-grid > * {
     animation: fadeIn 0.3s ease-out forwards;
   }
+
+  /* favorite-btn ${isFavoriteMovie ? 'active' */
+  .favorite-btn.active {
+    color: #e50914;
+    border-color: #e50914;
+}
