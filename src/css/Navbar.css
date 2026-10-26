@@ -1,0 +1,78 @@
+.navbar {
+    /* flex lays children in a row. Other options: block (stack), grid (rows and columns). */
+    display: flex;
+    /* #000000 is black. Other forms: red, rgb(0, 0, 0), hsl(0, 0%, 0%). */
+    background-color: #000000;
+    /* Two values: top/bottom, then left/right. One value sets all sides.
+       rem follows the root font size. 1rem is that size, 2rem is twice it.
+       Other units: px (fixed pixels), em (relative to this element's font). */
+    padding: 1rem 2rem;
+    /* Main axis (row): extra space goes between the brand and the links.
+       flex-start: pack at the left. flex-end: pack at the right. center: pack in the middle.
+       space-around: equal space around each item. space-evenly: equal space between and outside. */
+    justify-content: space-between;
+    /* Cross axis (vertical in a row): center lines the items up in the middle.
+       flex-start: top. flex-end: bottom. stretch: fill the height. */
+    align-items: center;
+    /* offset-x, offset-y, blur, spread, color. Positive y pushes the shadow down.
+       rgba's last number is opacity: 0 is invisible, 1 is solid. */
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    /* bold is 700. Other options: normal (400), lighter, or a number from 100 to 900. */
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    /* Gap is space between items only, not outside them. margin puts space outside an item. */
+    gap: 1rem;
+}
+
+.navbar-link {
+    /* none removes the underline. Other options: underline, line-through. */
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    /* Rounds the corners. 50% makes a circle when width and height match. 0 is square. */
+    border-radius: 0.5rem;
+    /* 500 is medium. Same scale as the brand: 400 normal, 700 bold. */
+    font-weight: 500;
+    /* Animate background-color over 0.3 seconds.
+       Order: property, duration, timing, optional delay.
+       Timing options: ease (slow, fast, slow), linear (constant), ease-in (slow start), ease-out (slow end).
+       Several properties: color 0.3s ease, background-color 0.3s ease. */
+    transition: background-color 0.3s ease;
+
+    /* :hover runs while the pointer is over the link.
+       :active runs only while the mouse button is held.
+       :focus runs after click or Tab, until focus moves away. */
+    &:hover {
+        /* White at 10% opacity, so the black bar shows through. */
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+}
+
+/* Styles inside apply only when the viewport is 768px wide or smaller.
+   min-width would apply at 768px and above instead. */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-links {
+        gap:1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .navbar-link {
+        padding: 0.5rem ;
+    }
+}
