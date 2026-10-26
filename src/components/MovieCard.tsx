@@ -1,16 +1,13 @@
+import type {Movie} from '../types/movies';
+
 type MovieCardProps = {
-   movie: {
-    url: string; 
-    title: string;
-    id: string;
-    release_date: string;
-   };
+   movie: Movie;
 }
 
 function MovieCard({movie}:MovieCardProps ) {
 
 
-  function handleFavorite(id: string) {
+  function handleFavorite(id: number) {
     alert(`Favorite button clicked for movie with id: ${id}`);
     console.log(`Favorite button clicked for movie with id: ${id}`);
   };

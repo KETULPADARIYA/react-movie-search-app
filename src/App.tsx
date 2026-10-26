@@ -15,7 +15,7 @@ function Text({ text }: TextProps) {
 }
 
 const movie = {
-  id: '1',
+  id: 1,
   title: 'The Dark Knight',
   url:'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQkUywIUXDjHSQJIaNHYVs08osgBpF5Ot-xmB_omyEZeeRP9Xug',
   release_date: '2008-07-18',
@@ -23,9 +23,12 @@ const movie = {
 
 function App() {
 
+  const MovieNumber:number =0;
+
   return (
     <>
-    <MovieCard movie={movie} />
+    {MovieNumber === 0 ? <MovieCard movie={movie} /> : <h1>No movies found</h1>}
+    { MovieNumber > 0 && <MovieCard movie={movie} /> }
     <Text text="Hello "/>
     <Text text="Whats app"/>
     </>
