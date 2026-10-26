@@ -6,6 +6,12 @@ function Home() {
 
     const [searchQuery, setSearchQuery] = useState('');
 
+  // we can use the useState hook to store the movies data in the browser
+  // we can use the useEffect hook to fetch the movies data from the server
+  // we can use the useEffect hook to update the movies data in the browser
+  // we can use the useEffect hook to delete the movies data in the browser
+  // we can use the useEffect hook to update the movies data in the browser
+  // we can use the useEffect hook to delete the movies data in the browser
 
  const movies: Movie[] = [
     {
@@ -49,7 +55,8 @@ function Home() {
 
   // movies data will updated whenever the search query changes
   // to persist movies data in the browser, we can use the localStorage API OR use a server-side database like Supabase
-  // OR CAN WE USE state
+  // OR CAN WE USE state management library like Redux or React Query?
+// YES, WE CAN USE STATE MANAGEMENT LIBRARY LIKE REDUX OR REACT QUERY TO PERSIST MOVIES DATA IN THE BROWSER
  // if the search query is empty, show all movies
  // if the search query is not empty, show only the movies that match the search query
 
