@@ -16,5 +16,11 @@ export const movieSchema = z.object({
 //     release_date: string;
 //     poster_path: string;
 // }
+export type MovieContextType = {
+    favorites: Movie[]
+    addFavorite: (movie: Movie) => void
+    removeFavorite: (movie: Movie) => void
+    isFavorite: (movieId: number) => boolean
+  };
 
 export type Movie= z.infer<typeof movieSchema>;
