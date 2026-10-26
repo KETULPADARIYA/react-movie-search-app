@@ -1,18 +1,8 @@
 // import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home'
-
-type TextProps = {
-  text: string;
-}
-
-function Text({ text }: TextProps) {
-  return (
-    <div id="text">
-      <h1>{text}</h1>
-    </div>
-  )
-}
+import './App.css';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import {Routes,Route} from "react-router-dom";
 
 
 function App() {
@@ -21,9 +11,10 @@ function App() {
 
   return (
     <>
-    <Home />
-    <Text text="Hello "/>
-    <Text text="Whats app"/>
+    <Routes>
+      <Route path = '/' element= {<Home/>}></Route>
+      <Route path = '/favourites' element= {<Favorites/>}></Route>
+    </Routes>
     </>
     
   )
