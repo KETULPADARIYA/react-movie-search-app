@@ -1,4 +1,4 @@
-.counter {
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -181,4 +181,24 @@
     right: 0;
     border-right-color: var(--border);
   }
+} */
+
+
+div#text {
+  background-color: white;
+  /* padding: 20px; */
+  border-radius: 10px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  color:black;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+div#text h1 {
+  color:black;
+  font-size: 20px;
 }
